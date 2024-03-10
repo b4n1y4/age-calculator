@@ -1,13 +1,155 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
+}
+
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: hsl(0, 0%, 94%);
+}
+
+.container {
+  /* max-width: fit-content; */
+  background-color: #fff;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1rem 1rem 8rem 1rem;
+}
+
+form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  color: hsl(0, 1%, 44%);
+}
+
+input[type="text"] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 8rem;
+  padding: 0.5rem 1rem;
+  outline: 0;
+  border: 0.05rem solid hsl(0, 0%, 86%);
+  border-radius: 0.25rem;
+}
+
+.error label {
+  color: hsl(0, 100%, 67%);
+}
+
+.error input {
+  border-color: hsl(0, 100%, 67%);
+}
+
+.error-msg {
+  font-size: 0.675rem;
+  font-style: italic;
+  font-weight: 400;
+  color: hsl(0, 100%, 67%);
+}
+
+.eval {
+  background-color: hsl(259, 100%, 65%);
+  width: 4rem;
+  height: 4rem;
+  padding: 0.75rem;
+  border: none;
+  outline: 0;
+  border-radius: 3rem;
+  align-self: flex-end;
+  margin-left: 25rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+}
+
+.eval::before {
+  content: "";
+  width: 25rem;
+  height: 0.1rem;
+  position: absolute;
+  top: 50%;
+  left: -25rem;
+  background-color: hsl(0, 0%, 86%);
+}
+
+.eval img {
+  width: 100%;
+}
+
+.eval:hover {
+  background-color: #000;
+}
+
+.result-container {
+  font-size: 2rem;
+  line-height: 4rem;
+  font-style: italic;
+}
+
+.accent {
+  color: hsl(259, 100%, 65%);
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 2.5vw;
+  }
+  .container {
+    margin: 2rem;
+    gap: 2.5rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  .result-container {
+    font-size: 2.5rem;
+    line-height: 5rem;
+  }
+  .eval {
+    margin-left: 0;
+    align-self: center;
+  }
+  .eval::before {
+    width: 30vw;
+    left: -12rem;
+  }
+  .eval::after {
+    content: "";
+    width: 30vw;
+    height: 0.1rem;
+    position: absolute;
+    top: 50%;
+    right: -12rem;
+    background-color: hsl(0, 0%, 86%);
+  }
 }
