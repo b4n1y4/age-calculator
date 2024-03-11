@@ -159,14 +159,13 @@ const App = () => {
       </button>
       <div className="result-container">
         <h1>
-          <span className="accent">{result.year}</span> years
+          <span className="accent">{result.year}</span> year{result.year === "--"? "s" : (result.year === 1 ? "" : "s")}
         </h1>
         <h1>
-          <span className="accent">{result.month}</span> months
-        </h1>
+          <span className="accent">{result.month}</span> month{result.month === "--"? "s" : (result.month === 1 ? "" : "s")}        </h1>
         <h1>
-          <span className="accent">{result.day}</span> days
-        </h1>
+          <span className="accent">{result.day}</span> day{result.day === "--"? "s" : (result.day === 1 ? "" : "s")}  
+ </h1>
       </div>
     </div>
   );
